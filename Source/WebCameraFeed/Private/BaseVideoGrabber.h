@@ -5,15 +5,15 @@
 #include "CoreMinimal.h"
 #include "WebCameraDevice.h"
 
-#include "Runnable.h"
-#include "RunnableThread.h"
+#include "HAL/Runnable.h"
+#include "HAL/RunnableThread.h"
 #include <Engine/Texture2D.h>
 #include <Engine/TextureRenderTarget2D.h>
 #include "PixelShaderDeclaration.h"
 #include <Misc/CoreDelegates.h>
 
 
-DECLARE_LOG_CATEGORY_EXTERN(LogVideoGrabber,Log, All)
+DECLARE_LOG_CATEGORY_EXTERN(LogVideoGrabber, Log, All)
 
 /**
  * 
@@ -57,7 +57,7 @@ public:
     
     bool isVideoMirrored();
     
-    void setVideoMirrored( bool mirrored );
+    void setVideoMirrored( bool bShouldMirrored );
 
     bool saveTextureAsFile (const FString& fileName );
     

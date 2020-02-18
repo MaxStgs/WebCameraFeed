@@ -67,6 +67,9 @@ public:
 	UFUNCTION(Category = "WebCamera", BlueprintCallable)
 	int GetBackCameraId();
 
+	UFUNCTION(Category = "WebCamera", BlueprintCallable)
+	void SetupCamera();
+
 #if WITH_EDITOR
     virtual const FText GetPaletteCategory() override;
 #endif

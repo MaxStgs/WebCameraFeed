@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "ModuleManager.h"
+#include "Modules/ModuleInterface.h"
 
 class FWebCameraFeedModule : public IModuleInterface
 {

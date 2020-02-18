@@ -7,9 +7,9 @@
 
 #if PLATFORM_WINDOWS
 
-#include "AllowWindowsPlatformTypes.h"
+#include "Windows/AllowWindowsPlatformTypes.h"
 #include "videoInput.h"
-#include "HideWindowsPlatformTypes.h"
+#include "Windows/HideWindowsPlatformTypes.h"
 
 class DirectShowVideoGrabber: public BaseVideoGrabber
 {
@@ -27,7 +27,7 @@ public:
 
 	void update() override;
 
-	bool setup(int w, int h, bool mirrored) override;
+	bool setup(int w, int h, bool bShouldMirrored) override;
 
 	int getHeight() const override;
 

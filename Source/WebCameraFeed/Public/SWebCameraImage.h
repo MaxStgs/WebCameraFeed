@@ -1,6 +1,6 @@
 #pragma once
 
-#include "SImage.h"
+#include "Widgets/Images/SImage.h"
 #include "VideoGrabber.h"
 
 class WEBCAMERAFEED_API SWebCameraImage: public SImage {
@@ -10,7 +10,7 @@ public:
 
 	virtual void Tick( const FGeometry& AllottedGeometry, const double InCurrentTime, const float InDeltaTime ) override;
 
-	void SetVideoGrabber(TSharedPtr<VideoGrabber> videoGrabber);
+	void SetVideoGrabber(TSharedPtr<VideoGrabber> OutputVideoGrabber);
 	
 protected:
 	TSharedPtr<VideoGrabber> videoGrabber;

@@ -1,6 +1,9 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "WebCameraWidget.h"
+
+#include "Engine.h"
+#include "HAL/FileManager.h"
 #include "Widgets/Images/SImage.h"
 #include "Widgets/Layout/SBox.h"
 #include "Widgets/Text/STextBlock.h"
@@ -98,6 +101,23 @@ int UWebCameraWidget::GetBackCameraId() {
 		return currentVideoGrabber->getBackCamera();
 	}
 	return 0;
+}
+
+void UWebCameraWidget::SetupCamera()
+{
+	if (currentVideoGrabber.IsValid())
+	{
+		auto ListDevices = currentVideoGrabber.Get()->listDevices();
+		UE_LOG(LogInit, Log, TEXT("Found cameras: %d"), ListDevices.Num());
+		for (auto& Device : ListDevices)
+		{
+			SetDeviceId(Device.id);
+		}
+	}
+	else
+	{
+		UE_LOG(LogInit, Error, TEXT("Found cameras: 0"));
+	}
 }
 
 void  UWebCameraWidget::SetDeviceId(int id) {

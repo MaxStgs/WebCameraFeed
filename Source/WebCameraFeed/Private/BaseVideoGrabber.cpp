@@ -3,12 +3,12 @@
 #include "BaseVideoGrabber.h"
 #include "ImageUtility.h"
 #include <UnrealEngine.h>
-#include <Classes/Engine/World.h>
+#include <Engine/World.h>
 #include <SceneInterface.h>
-#include <Public/GlobalShader.h>
-#include <Public/PipelineStateCache.h>
-#include <Public/RHIStaticStates.h>
-#include <Public/RHIUtilities.h>
+#include <GlobalShader.h>
+#include <PipelineStateCache.h>
+#include <RHIStaticStates.h>
+#include <RHIUtilities.h>
 #include <Engine/TextureRenderTarget2D.h>
 
 static const uint32 kGridSubdivisionX = 32;
@@ -339,8 +339,8 @@ bool BaseVideoGrabber::isVideoMirrored() {
     return mirrored;
 }
 
-void BaseVideoGrabber::setVideoMirrored( bool mirrored ) {
-    this->mirrored = mirrored;
+void BaseVideoGrabber::setVideoMirrored( bool bShouldMirrored ) {
+    this->mirrored = bShouldMirrored;
 }
 
 

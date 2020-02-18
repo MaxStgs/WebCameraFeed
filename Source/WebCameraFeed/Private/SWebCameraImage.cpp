@@ -1,11 +1,8 @@
 #include "SWebCameraImage.h"
 
-
-
 SWebCameraImage::SWebCameraImage() {
-	bCanTick = true;
+	SetCanTick(true);
 }
-
 
 void SWebCameraImage::Tick( const FGeometry& AllottedGeometry, const double InCurrentTime, const float InDeltaTime ) {
 	if ( videoGrabber.IsValid() && videoGrabber->isFrameNew() ) {
@@ -18,6 +15,6 @@ void SWebCameraImage::Tick( const FGeometry& AllottedGeometry, const double InCu
 	}
 }
 
-void SWebCameraImage::SetVideoGrabber(TSharedPtr<VideoGrabber> videoGrabber) {
-	this->videoGrabber = videoGrabber;
+void SWebCameraImage::SetVideoGrabber(TSharedPtr<VideoGrabber> OutputVideoGrabber) {
+	this->videoGrabber = OutputVideoGrabber;
 }

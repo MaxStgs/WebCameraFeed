@@ -5,7 +5,7 @@
 #include <IImageWrapperModule.h>
 #include <Modules/ModuleManager.h>
 #include <IImageWrapper.h>
-#include <ObjectThumbnail.h>
+#include <Misc/ObjectThumbnail.h>
 #include "Misc/FileHelper.h"
 
 ImageUtility::ImageUtility()
